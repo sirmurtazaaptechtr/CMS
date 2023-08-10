@@ -11,13 +11,16 @@
     $res = mysqli_query($conn,$sql);    
     while($rows = mysqli_fetch_assoc($res)){      
       if($username == $rows['username'] && $password == $rows['password']){
+        $_SESSION['ADMIN_LOGIN'] = 'yes';
+        $_SESSION['ADMIN_USERNAME'] = $username;
+        $_SESSION['ROLE'] = $rows['role_id'];
         $flag = true;
         break;       
       }else{
         $flag = false;                
       }
     }    
-    if($flag){      
+    if($flag){            
       redirect('dashboard.php');
     }else{
       $loginError = '<div class="alert alert-danger" role="alert">

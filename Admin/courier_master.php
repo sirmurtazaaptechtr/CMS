@@ -1,15 +1,15 @@
 <?php 
   require('menu.inc.php');
-  $sql = "SELECT * FROM `role`";
+  $sql = "SELECT * FROM `couriercompanies`";
   $res = mysqli_query($conn,$sql);
 ?>
 <main id="main" class="main">
     <div class="pagetitle">
-      <h1>Roles</h1>
+      <h1>Courier Companies</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="dashboard.php">Admin</a></li>
-          <li class="breadcrumb-item">Roles</li>          
+          <li class="breadcrumb-item">Courier Companies</li>          
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -20,16 +20,16 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Roles</h5>
-              <p>Add, Remove and Edit Role</p>
+              <h5 class="card-title">Courier Companies</h5>
+              <p>Add, Remove and Edit Courier Company</p>
 
               <!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Role ID</th>
-                    <th scope="col">Role</th>
+                    <th scope="col">Courier Company ID</th>
+                    <th scope="col">Courier Company Name</th>
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
@@ -40,8 +40,8 @@
                       echo "<tr>";
                   ?>
                   <td><?php echo $srno; ?></td>
-                  <td><?php echo $rows['role_id']; ?></td>
-                  <td><?php echo $rows['role']; ?></td>
+                  <td><?php echo $rows['courier_company_id']; ?></td>
+                  <td><?php echo $rows['courier_company_name']; ?></td>
                   <td><?php echo '<a href="#">Delete</a>'; ?></td>
 
                   <?php
